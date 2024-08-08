@@ -1,11 +1,12 @@
 {
-  "domain": "custom_filters",
-  "name": "Custom Template Filters.",
-  "description": "This is a forked project from https://github.com/zvldz/ha_custom_filters. It allows for custom template filters to be created.",
-  "version": "0.10.0",
-  "documentation": "https://github.com/TimothyJCowen/ha_custom_filters",
-  "issue_tracker": "https://github.com/TimothyJCowen/ha_custom_filters/issues",
-  "after_dependencies": ["template"],
-  "requirements": ["jinja2"],
-  "codeowners": ["@TimothyJCowen"]
+    "domain": "custom_filters",
+    "name": "Custom Template Filters",
+    "version": "1.0.0",
+    "config_flow": true,
+    "single_config_entry": true,
+    "documentation": "https://github.com/TimothyJCowen/ha_custom_filters",
+    "issue_tracker": "https://github.com/TimothyJCowen/ha_custom_filters/issues",
+    "after_dependencies": ["template"],
+    "requirements": ["jinja2"],
+    "codeowners": ["@TimothyJCowen"]
 }
