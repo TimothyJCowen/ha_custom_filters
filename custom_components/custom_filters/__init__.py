@@ -46,10 +46,10 @@ async def async_setup_entry(hass, config_entry):
     # hass.async_add_executor_job to handle that
     try:
         template = hass_template.Template("", hass)
-        await hass.async_add_executor_job(refresh_filters, FOLDER, template)
+        await hass.async_add_executor_job(refresh_filters, FOLDER, template._env)
 
-    except Exception:
-        _LOGGER.error("Failed to load filters.", exc_info=True)
+    except Exception as ex:
+        _LOGGER.error("Failed to load filters. %s", ex, exc_info=True)
 
     return True
 
