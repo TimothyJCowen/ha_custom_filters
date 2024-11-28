@@ -48,8 +48,8 @@ def _import_functions(module):
             len(functions),
             module.__name__,
         )
-        for _, func in functions:
-            yield func
+        for name, func in functions:
+            yield (name, func)
 
     except Exception:
         _LOGGER.error(
@@ -80,7 +80,7 @@ def refresh_filters(package_path, env):
 
     _LOGGER.debug("Attaching custom filters to environment...")
     # Attach the filters to the environment
-    for filter in filters:
-        env.globals[filter.__name__] = filter
-        env.filters[filter.__name__] = filter
+    for name, func in filters:
+        env.globals[name] = func
+        env.filters[name] = func
     _LOGGER.info("Successfully loaded %s custom filters.", len(filters))
